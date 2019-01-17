@@ -1,0 +1,11 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: gke-managed-certificates-demo
+  namespace: gke-managed-certificates-demo
+  annotations:
+    ingress.gcp.kubernetes.io/pre-shared-cert: 'gke-managed-certificates-demo'
+spec:
+  backend:
+    serviceName: jenkins-ui
+    servicePort: 8080
